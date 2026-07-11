@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <!-- Left Leg: Vibrant Polished Gold Gradient -->
+    <linearGradient id="left-gold" x1="5" y1="3" x2="18.5" y2="27" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFF6D6" />
+      <stop offset="40%" stop-color="#E5BA73" />
+      <stop offset="100%" stop-color="#C58940" />
+    </linearGradient>
+
+    <!-- Right Leg: Deeper Copper-Gold Gradient (Creates 3D Overlap Depth) -->
+    <linearGradient id="right-gold" x1="27" y1="27" x2="13.5" y2="3" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#804A00" />
+      <stop offset="60%" stop-color="#B87C2E" />
+      <stop offset="100%" stop-color="#FCE19C" />
+    </linearGradient>
+
+    <!-- Floating Crossbar: Bright Glowing Gold -->
+    <linearGradient id="cross-gold" x1="10" y1="18.5" x2="22" y2="21" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E5BA73" />
+      <stop offset="50%" stop-color="#FFF6D6" />
+      <stop offset="100%" stop-color="#C58940" />
+    </linearGradient>
+  </defs>
+
+  <!-- Right Leg (Under-lap layer) -->
+  <path d="M16 3L27 25H21.5L14 10Z" fill="url(#right-gold)" />
+
+  <!-- Left Leg (Overlap layer, creates folding ribbon effect) -->
+  <path d="M16 3L5 25H10.5L18 10Z" fill="url(#left-gold)" />
+
+  <!-- Floating crossbar (Threads through the center) -->
+  <path d="M11 17.5H21L19.5 20.5H12.5Z" fill="url(#cross-gold)" />
+</svg>
