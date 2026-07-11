@@ -957,4 +957,226 @@ body {
   }
 }
 
+/* ─── Custom Dropdown component styling ──────────────────────────────────── */
+.custom-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  background: rgba(249, 244, 235, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(188, 180, 153, 0.35);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+  animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
+}
+
+.custom-dropdown-item {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--color-charcoal);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.custom-dropdown-item.selected {
+  color: var(--color-gold);
+  background: rgba(209, 168, 119, 0.04);
+}
+
+.custom-dropdown-item:hover {
+  background: rgba(209, 168, 119, 0.06);
+  color: var(--color-gold);
+}
+
+/* ─── Luxury Concierge Form (Dark High-Contrast Theme) ────────────────────── */
+.concierge-form-container {
+  background: var(--color-charcoal) !important;
+  border: 1px solid rgba(209, 168, 119, 0.35) !important; /* Gold border */
+  border-radius: 8px;
+  padding: 4rem 3.5rem !important;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.22) !important;
+  position: relative;
+  overflow: visible;
+}
+
+/* Subtle gold outline inside the card border */
+.concierge-form-container::before {
+  content: '';
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(209, 168, 119, 0.12);
+  pointer-events: none;
+  border-radius: 6px;
+  z-index: 0;
+}
+
+/* Make sure inner elements stack above the absolute pseudo-element border */
+.concierge-form-container form {
+  position: relative;
+  z-index: 1;
+}
+
+.concierge-form-container h2 {
+  color: var(--color-cream) !important;
+}
+
+.concierge-form-container .form-label {
+  color: rgba(249, 244, 235, 0.55);
+}
+
+.concierge-form-container .form-group:focus-within .form-label {
+  color: var(--color-gold) !important;
+}
+
+.concierge-form-container .form-input {
+  border-bottom: 1px solid rgba(249, 244, 235, 0.2) !important;
+  color: var(--color-cream) !important;
+}
+
+.concierge-form-container .form-input:focus {
+  border-bottom-color: rgba(209, 168, 119, 0.3) !important;
+}
+
+.concierge-form-container .form-textarea {
+  background: rgba(249, 244, 235, 0.02) !important;
+  border: 1px solid rgba(249, 244, 235, 0.2) !important;
+  color: var(--color-cream) !important;
+}
+
+.concierge-form-container .form-textarea:focus {
+  border-color: var(--color-gold) !important;
+  background: rgba(209, 168, 119, 0.05) !important;
+}
+
+/* Custom Dropdown Overrides in Dark Form */
+.concierge-form-container .custom-dropdown-menu {
+  background: #2D2F33 !important; /* Slate-charcoal dropdown background */
+  border: 1px solid rgba(209, 168, 119, 0.3) !important;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4) !important;
+}
+
+.concierge-form-container .custom-dropdown-item {
+  color: rgba(249, 244, 235, 0.8) !important;
+}
+
+.concierge-form-container .custom-dropdown-item.selected {
+  color: var(--color-gold) !important;
+  background: rgba(209, 168, 119, 0.08) !important;
+}
+
+.concierge-form-container .custom-dropdown-item:hover {
+  background: rgba(209, 168, 119, 0.12) !important;
+  color: var(--color-gold) !important;
+}
+
+/* Custom button style overrides inside dark form container */
+.concierge-form-container .btn-primary {
+  background-color: var(--color-gold) !important;
+  color: var(--color-charcoal) !important;
+}
+
+.concierge-form-container .btn-primary:hover {
+  background-color: transparent !important;
+  border-color: var(--color-gold) !important;
+  color: var(--color-gold) !important;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(58, 61, 66, 0.45);
+  display: block;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.form-input-wrapper {
+  position: relative;
+}
+
+.form-input-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.4s var(--transition-luxury), left 0.4s var(--transition-luxury);
+}
+
+.form-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(188, 180, 153, 0.35);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  padding: 0.6rem 0;
+  outline: none;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-bottom-color: rgba(188, 180, 153, 0.15);
+}
+
+.form-input:focus + .form-input-line {
+  width: 100%;
+  left: 0;
+}
+
+.form-group:focus-within .form-label {
+  color: var(--color-gold);
+}
+
+/* Custom premium dropdown selectors */
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23D1A877' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 2rem !important;
+  cursor: pointer;
+}
+
+/* Custom textarea styling */
+.form-textarea {
+  width: 100%;
+  background: rgba(188, 180, 153, 0.03);
+  border: 1px solid rgba(188, 180, 153, 0.35);
+  border-radius: 4px;
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  padding: 0.85rem;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-textarea:focus {
+  border-color: var(--color-gold);
+  background: rgba(209, 168, 119, 0.02);
+}
+
+
 
