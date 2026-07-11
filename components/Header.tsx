@@ -2,27 +2,36 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "Destinations", href: "#journeys" },
-  { label: "Experiences", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Journal", href: "#journal-preview" },
-  { label: "Contact", href: "#contact" },
+  { label: "Destinations", href: "/destinations" },
+  { label: "Experiences", href: "/#process" },
+  { label: "About", href: "/about" },
+  { label: "Journal", href: "/journal" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (!isHome) {
+      setScrolled(true);
+      return;
+    }
+
+    setScrolled(window.scrollY > 60);
     const onScroll = () => {
       setScrolled(window.scrollY > 60);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [isHome, pathname]);
 
   return (
     <header
@@ -40,7 +49,7 @@ export default function Header() {
         <ul className="site-nav">
           {navItems.map((item) => (
             <li key={item.label}>
-              <a href={item.href}>{item.label}</a>
+              <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
         </ul>
@@ -90,7 +99,7 @@ export default function Header() {
           <ul className="flex flex-col items-center gap-8">
             {navItems.map((item, i) => (
               <li key={item.label}>
-                <a
+                <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
                   style={{
@@ -107,7 +116,7 @@ export default function Header() {
                   }}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -150,19 +150,17 @@ body {
 
 .btn-primary:hover {
   background-color: transparent;
-  border-color: var(--color-cream);
-  color: var(--color-cream);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
-
-/* Override hover behavior on light backgrounds to preserve legibility */
-#process .btn-primary:hover,
-#about .btn-primary:hover,
-#journeys .btn-primary:hover,
-#journal-preview .btn-primary:hover {
   border-color: var(--color-charcoal);
   color: var(--color-charcoal);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+/* Override back to light text & borders ONLY inside the dark hero section */
+.hero-content .btn-primary:hover,
+.hero-section .btn-primary:hover {
+  border-color: var(--color-cream);
+  color: var(--color-cream);
 }
 
 

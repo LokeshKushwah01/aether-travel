@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 
 export default function HeroSequence() {
@@ -216,9 +217,9 @@ export default function HeroSequence() {
               <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <a href="#about" className="btn-outline" id="hero-about-cta" style={{ color: "rgba(249,244,235,0.85)", borderColor: "rgba(249,244,235,0.35)" }}>
+          <Link href="/about" className="btn-outline" id="hero-about-cta" style={{ color: "rgba(249,244,235,0.85)", borderColor: "rgba(249,244,235,0.35)" }}>
             Our Story
-          </a>
+          </Link>
         </div>
       </div>
 

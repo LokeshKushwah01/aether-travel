@@ -28,11 +28,10 @@ function getFooterHref(heading: string, link: string) {
   }
   if (heading === "Company") {
     if (link === "Journal") return "/journal";
-    return "/#about";
+    return "/about";
   }
   if (heading === "Support") {
-    if (link === "Contact Us") return "/#contact";
-    return "/#contact";
+    return "/contact";
   }
   return "/";
 }

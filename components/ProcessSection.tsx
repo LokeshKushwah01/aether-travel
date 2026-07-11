@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -270,12 +271,12 @@ export default function ProcessSection() {
         >
           "The most extraordinary journeys begin with a single conversation."
         </p>
-        <a href="#contact" className="btn-primary" id="process-contact-cta">
+        <Link href="/contact" className="btn-primary" id="process-contact-cta">
           Begin Your Journey
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-        </a>
+        </Link>
       </div>
     </section>
   );

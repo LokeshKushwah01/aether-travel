@@ -230,10 +230,11 @@ export default function DestinationsPage() {
           }}
         >
           {filteredJourneys.map((j) => (
-            <article
+            <Link
               key={j.id}
+              href={`/contact?journey=${j.id}`}
               className="journey-card"
-              style={{ height: "540px" }}
+              style={{ height: "540px", textDecoration: "none", display: "block" }}
               id={`journey-card-${j.id}`}
               aria-label={j.title}
             >
@@ -315,7 +316,7 @@ export default function DestinationsPage() {
                   </svg>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </main>
