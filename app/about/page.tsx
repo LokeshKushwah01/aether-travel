@@ -59,9 +59,6 @@ export default function AboutPage() {
           style={{
             paddingLeft: "clamp(1.5rem, 6vw, 7rem)",
             paddingRight: "clamp(1.5rem, 6vw, 7rem)",
-            display: "grid",
-            gridTemplateColumns: "1.2fr 1fr",
-            gap: "5rem",
             alignItems: "center",
             marginBottom: "7rem",
           }}
@@ -155,9 +152,6 @@ export default function AboutPage() {
         >
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "2rem",
               background: "rgba(188, 180, 153, 0.08)",
               border: "1px solid rgba(188, 180, 153, 0.2)",
               padding: "3rem 2rem",
@@ -310,11 +304,6 @@ export default function AboutPage() {
           </div>
 
           <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "2.5rem",
-            }}
             className="values-grid"
           >
             {/* Foundation 1 */}
@@ -435,11 +424,6 @@ export default function AboutPage() {
           </div>
 
           <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "2.5rem",
-            }}
             className="curators-grid"
           >
             {/* Curator 1 */}

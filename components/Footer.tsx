@@ -36,6 +36,44 @@ function getFooterHref(heading: string, link: string) {
   return "/";
 }
 
+const socialPlatforms = [
+  {
+    name: "instagram",
+    url: "https://www.instagram.com",
+    label: "Follow on Instagram",
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    ),
+  },
+  {
+    name: "twitter",
+    url: "https://x.com",
+    label: "Follow on X",
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+        <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+      </svg>
+    ),
+  },
+  {
+    name: "linkedin",
+    url: "https://www.linkedin.com",
+    label: "Connect on LinkedIn",
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+        <rect x="2" y="9" width="4" height="12"></rect>
+        <circle cx="4" cy="4" r="2"></circle>
+      </svg>
+    ),
+  },
+];
+
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
   const newsletterRef = useRef<HTMLDivElement>(null);
@@ -202,11 +240,13 @@ export default function Footer() {
           </p>
           {/* Social icons */}
           <div style={{ display: "flex", gap: "1.25rem" }}>
-            {["instagram", "twitter", "linkedin"].map((platform) => (
+            {socialPlatforms.map((platform) => (
               <a
-                key={platform}
-                href="#"
-                aria-label={`Follow on ${platform}`}
+                key={platform.name}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={platform.label}
                 style={{
                   width: "36px",
                   height: "36px",
@@ -218,9 +258,6 @@ export default function Footer() {
                   color: "rgba(249,244,235,0.5)",
                   textDecoration: "none",
                   transition: "border-color 0.3s ease, color 0.3s ease",
-                  fontSize: "0.7rem",
-                  fontFamily: "var(--font-inter), sans-serif",
-                  letterSpacing: "0.05em",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--color-gold)";
@@ -231,7 +268,7 @@ export default function Footer() {
                   (e.currentTarget as HTMLAnchorElement).style.color = "rgba(249,244,235,0.5)";
                 }}
               >
-                {platform === "instagram" ? "Ig" : platform === "twitter" ? "Tw" : "Li"}
+                {platform.icon}
               </a>
             ))}
           </div>

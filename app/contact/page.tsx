@@ -63,10 +63,6 @@ export default function ContactPage() {
           style={{
             paddingLeft: "clamp(1.5rem, 6vw, 7rem)",
             paddingRight: "clamp(1.5rem, 6vw, 7rem)",
-            display: "grid",
-            gridTemplateColumns: "1.5fr 2fr",
-            gap: "5rem",
-            alignItems: "start",
           }}
         >
           {/* Left Column: Premium Brand Text & Details */}
